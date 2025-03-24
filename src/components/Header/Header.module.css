@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-left: 30px;
+  color: #495057;
+}
+
+.nav {
+  margin: 20px 30px 20px 0;
+}
