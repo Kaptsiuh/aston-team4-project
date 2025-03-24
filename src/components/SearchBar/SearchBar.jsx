@@ -3,13 +3,11 @@ import { Button } from "../Button/Button";
 import s from "./SearchBar.module.css";
 import { Input } from "../Input/Input";
 
-export const SearchBar = () => {
+export const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
-    if (query.trim()) {
-      query.trim().toLowerCase(); //result
-    }
+    onSearch(query.trim().toLowerCase());
     setQuery("");
   };
 

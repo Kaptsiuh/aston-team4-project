@@ -1,0 +1,14 @@
+.items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.not_found {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #495057;
+}

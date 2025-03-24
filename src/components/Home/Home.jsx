@@ -1,9 +1,9 @@
-import { SearchBar } from "../SearchBar/SearchBar";
+import { ItemsList } from "../ItemsList/ItemsList";
 
 export const Home = () => {
   return (
     <div>
-      <SearchBar />
+      <ItemsList />
     </div>
   );
 };
