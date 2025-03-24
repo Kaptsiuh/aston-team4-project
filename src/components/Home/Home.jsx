@@ -1,3 +1,9 @@
+import { ItemsList } from "../ItemsList/ItemsList";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <ItemsList />
+    </div>
+  );
 };
