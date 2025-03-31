@@ -1,0 +1,43 @@
+.details {
+    margin: 20px;
+    padding: 16px;
+    text-align: center;
+}
+
+.name {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #495057;
+}
+
+.img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.details p {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #6c757d;
+}
+
+.error {
+    margin: 20px;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+
+.loading{
+    margin: 20px;
+    padding: 16px;
+    font-size: 24px;
+    text-align: center;
+}
