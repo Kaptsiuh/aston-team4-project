@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { Button } from "../Button/Button";
 import s from "./Header.module.css";
+import { useContext } from "react";
+import AuthContext from "../../utils/context";
 
 export const Header = () => {
-  const user = true;
+  const { isAuth, setAuth, setUserInfo } = useContext(AuthContext);
+
+  const logout = () => {
+    setAuth(false);
+    setUserInfo(null);
+  };
 
   return (
     <header className={s.header}>
@@ -14,7 +21,7 @@ export const Header = () => {
         </Link>
       </h1>
       <nav className={s.nav}>
-        {user ? (
+        {isAuth ? (
           <>
             <Link to={ROUTES.FAVORITES}>
               <Button title="Favorites" />
@@ -23,7 +30,7 @@ export const Header = () => {
               <Button title="History" />
             </Link>
             <Link to={ROUTES.HOME}>
-              <Button title="Log out" />
+              <Button title="Log out" onClick={logout} />
             </Link>
           </>
         ) : (
