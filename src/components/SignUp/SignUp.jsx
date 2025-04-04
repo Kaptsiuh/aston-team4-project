@@ -4,10 +4,10 @@ import s from "./SignUp.module.css";
 import { useForm } from "react-hook-form";
 import AuthContext from "../../utils/context";
 import { useNavigate } from "react-router-dom";
-import { saveUser, setUser } from "../../utils/mockUsers";
+import { mockRegister } from "../../utils/mockRegister";
 
 export const SignUp = () => {
-  const { setAuth, setUserInfo } = useContext(AuthContext);
+  const { isAuth, setAuth, setUserInfo } = useContext(AuthContext);
 
   const { register, handleSubmit } = useForm();
   const navigation = useNavigate();
@@ -18,14 +18,12 @@ export const SignUp = () => {
       name: data.name,
       email: data.email,
     });
-    saveUser(data);
-    setUser(data);
+    mockRegister(data);
     navigation("/");
   };
 
   useEffect(() => {
-    localStorage.getItem("currentUser") &&
-      onSubmit(JSON.parse(localStorage.getItem("currentUser")));
+    isAuth && navigation("/");
   }, []);
 
   return (

@@ -1,7 +1,10 @@
-import { setUser } from "./mockUsers";
+const localUsers = JSON.parse(localStorage.getItem("localUsers"));
+
+export const setUser = (user) => {
+  localStorage.setItem("currentUser", JSON.stringify(user));
+};
 
 export const login = (loginData, loginCallback) => {
-  const localUsers = JSON.parse(localStorage.getItem("localUsers"));
   const localUser = localUsers.filter(
     (user) => user.email === loginData.email
   )[0];

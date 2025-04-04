@@ -9,6 +9,7 @@ export const Header = () => {
   const { isAuth, setAuth, setUserInfo } = useContext(AuthContext);
 
   const logout = () => {
+    localStorage.removeItem("currentUser");
     setAuth(false);
     setUserInfo(null);
   };
