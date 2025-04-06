@@ -11,7 +11,9 @@ export const ItemsList = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");
+        const response = await fetch(
+          "https://pokeapi.co/api/v2/pokemon?limit=50"
+        );
         if (!response.ok) throw new Error("Pokemons not found!");
         const data = await response.json();
 
@@ -30,6 +32,7 @@ export const ItemsList = () => {
         setCollectionPokemons(dataPokemons);
         setFilteredPokemons(dataPokemons);
       } catch (err) {
+        console.log("err.message", err.message);
         setError(err.message);
       }
     };
